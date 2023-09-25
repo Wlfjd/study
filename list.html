@@ -1,56 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link href="detail.css" rel="stylesheet">  
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="detail.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
   <body>
-
-<div class="card-group container">
-  <div class="card">
-    <img src="https://via.placeholder.com/600">
-    <div class="card-body">
-      <h5 class="title">Card title</h5>
-      <p>가격 : <span class="price">70000</span></p>
-      <button class="btn btn-danger">주문하기</button>
+    <div class="container">
+      <div class="row"></div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/600">
-    <div class="card-body">
-      <h5 class="title">Card title</h5>
-      <p>가격 : <span class="price">70000</span></p>
-      <button class="btn btn-danger">주문하기</button>
+    <div class="container">
+      <button class="btn btn-danger" id="more">더보기</button>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/600">
-    <div class="card-body">
-      <h5 class="title">Card title</h5>
-      <p>가격 : <span class="price">70000</span></p>
-      <button class="btn btn-danger">주문하기</button>
+    <div class="container my-3">
+      <button class="btn btn-danger" id="sort">정렬</button>
     </div>
-  </div>
-</div>
 
-<script>
-  let products = [
-    { id : 0, price : 70000, title : 'Blossom Dress' },
-    { id : 1, price : 50000, title : 'Springfield Shirt' },
-    { id : 2, price : 60000, title : 'Black Monastery' }
-  ];
+    <script>
+      var array = [7, 5, 3, 6, 1];
 
-  for(let i=0; i<products.length; i++){
-    $('.title').eq(i).html(products[i].title)
-    $('.price').eq(i).html(products[i].price)
-  }
+      var newarray = array.map(function (data) {
+        return data;
+      });
+      console.log(newarray);
 
-</script> 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      let products = [
+        { id: 0, price: 70000, title: "Blossom Dress" },
+        { id: 1, price: 50000, title: "Springfield Shirt" },
+        { id: 2, price: 60000, title: "Black Monastery" },
+      ];
+
+      function makeCard(i, data) {
+        let cards = `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>${data.title}</h5>
+          <p>가격 : ${data.price}</p>
+        </div>`;
+        $(".row").append(cards);
+      }
+
+      products.forEach(function (data, i) {
+        makeCard(i, data);
+      });
+
+      $("#sort").click(function () {
+        products.sort((a, b) => {
+          return a.price - b.price;
+        });
+        $(".row").html("");
+        products.forEach((data, i) => {
+          console.log(i, data);
+          makeCard(i, data);
+        });
+      });
+
+      let count = 0;
+
+      $("#more").click(function () {
+        count++;
+        if (count == 1) {
+          url = "https://codingapple1.github.io/js/more1.json";
+        } else if (count == 2) {
+          url = "https://codingapple1.github.io/js/more2.json";
+          $("#more").attr("disabled", true);
+        }
+
+        $.get(url).then((moreproducts) => {
+          moreproducts.forEach((data, i) => {
+            products.push(data);
+            console.log(data.id, data);
+            makeCard(data.id, data);
+          });
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
