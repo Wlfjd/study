@@ -26,46 +26,53 @@
       <button class="btn btn-danger" id="more">더보기</button>
     </div>
     <div class="container my-3">
-      <button class="btn btn-danger" id="sort">정렬</button>
+      <button class="btn btn-danger" id="sort">가격 오름차순 정렬</button>
+    </div>
+    <div class="container my-3">
+      <button class="btn btn-danger" id="word">다나가 순 정렬</button>
+    </div>
+    <div class="container my-3">
+      <button class="btn btn-danger" id="underprice">
+        6만원 이하 상품 보기
+      </button>
     </div>
 
     <script>
-      var array = [7, 5, 3, 6, 1];
-
-      var newarray = array.map(function (data) {
-        return data;
-      });
-      console.log(newarray);
-
       let products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
 
-      function makeCard(i, data) {
-        let cards = `<div class="col-sm-4">
+      function makeCard(products) {
+        products.forEach((data) => {
+          let cards = `<div class="col-sm-4">
           <img src="https://via.placeholder.com/600" class="w-100" />
           <h5>${data.title}</h5>
           <p>가격 : ${data.price}</p>
+         <button class="buy btn btn-secondary mb-3" id="${data.id}">구매</button>
         </div>`;
-        $(".row").append(cards);
+          $(".row").append(cards);
+        });
+        //모든 buy 클래스에 이벤트 리스너를 한번에 달아준다
+        $(".buy").click((e) => {
+          let title = $(e.target).siblings("h5").html();
+
+          if (localStorage.cart) {
+            let titlesout = JSON.parse(localStorage.cart);
+            titlesout.push(title);
+            localStorage.setItem("cart", JSON.stringify(titlesout));
+          } else {
+            let titles = JSON.stringify([title]); // 로컬스토리지에 저장하기 위해 문자화를 시키기
+            localStorage.setItem("cart", titles);
+          }
+        });
       }
 
-      products.forEach(function (data, i) {
-        makeCard(i, data);
-      });
+      //첫번째 상품들
+      makeCard(products);
 
-      $("#sort").click(function () {
-        products.sort((a, b) => {
-          return a.price - b.price;
-        });
-        $(".row").html("");
-        products.forEach((data, i) => {
-          console.log(i, data);
-          makeCard(i, data);
-        });
-      });
+      // 두번째,세번째 상품들
 
       let count = 0;
 
@@ -77,14 +84,43 @@
           url = "https://codingapple1.github.io/js/more2.json";
           $("#more").attr("disabled", true);
         }
-
         $.get(url).then((moreproducts) => {
-          moreproducts.forEach((data, i) => {
+          moreproducts.forEach((data) => {
             products.push(data);
-            console.log(data.id, data);
-            makeCard(data.id, data);
           });
+          makeCard(moreproducts);
         });
+      });
+
+      //가격 오름차순 정렬버튼
+      $("#sort").click(function () {
+        products.sort((a, b) => {
+          return a.price - b.price;
+        });
+        console.log(products);
+        $(".row").html("");
+        makeCard(products);
+      });
+      // 다나가 순 정렬
+      $("#word").click(function () {
+        products.sort((a, b) => {
+          if (a.title < b.title) {
+            return 1;
+          } else if (a.title == b.title) {
+            return 0;
+          } else return -1;
+        });
+        $(".row").html("");
+        makeCard(products);
+      });
+
+      // 6만원 이하 상품만 보기
+      $("#underprice").click(function () {
+        products = products.filter((data) => {
+          return data.price <= 60000;
+        });
+        $(".row").html("");
+        makeCard(products);
       });
     </script>
     <script
