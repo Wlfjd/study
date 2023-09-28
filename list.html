@@ -57,14 +57,24 @@
         //모든 buy 클래스에 이벤트 리스너를 한번에 달아준다
         $(".buy").click((e) => {
           let title = $(e.target).siblings("h5").html();
-
+          console.log(title);
           if (localStorage.cart) {
-            let titlesout = JSON.parse(localStorage.cart);
-            titlesout.push(title);
-            localStorage.setItem("cart", JSON.stringify(titlesout));
+            let cartitems = JSON.parse(localStorage.getItem("cart"));
+
+            let isItem = cartitems.find((item) => item.title == title);
+
+            if (isItem) {
+              //존재하면 push로 추가하는 것이 아니라 getItems로 수정해야할 듯
+              isItem.count++;
+            } else {
+              cartitems.push({ title: title, count: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cartitems));
           } else {
-            let titles = JSON.stringify([title]); // 로컬스토리지에 저장하기 위해 문자화를 시키기
-            localStorage.setItem("cart", titles);
+            localStorage.setItem(
+              "cart",
+              JSON.stringify([{ title: title, count: 1 }])
+            );
           }
         });
       }
@@ -75,7 +85,6 @@
       // 두번째,세번째 상품들
 
       let count = 0;
-
       $("#more").click(function () {
         count++;
         if (count == 1) {

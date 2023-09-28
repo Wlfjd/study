@@ -1,251 +1,262 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link href="main.css" rel="stylesheet">  
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="main.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
   <body>
-<div>
-    <div class="black-bg">
+    <div>
+      <div class="black-bg">
         <div class="white-bg">
-            <h4>로그인하세요</h4>
+          <h4>로그인하세요</h4>
 
-            <form action="success.html">
-                <div class="my-3">
-                    <input type="text" id= "email" class="form-control">
-                </div>
-                <div class="my-3">
-                    <input type="password" id="pw" class="form-control">
-                    <p class="textholder">6자리 이상 입력하세요</p>
-                </div>
-                <button type="submit" id="submit" class="btn btn-primary">전송</button>
-                <button type="button" class="btn btn-danger" id="close">닫기</button>
-            </form> 
-        </div> 
-    </div> 
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand">jiwonee</span>
-            <span class="badge ms-auto mx-3 bg-dark ">Dark 🔄</span>
-            <button class="navbar-toggler" type="button">
-            <span class="navbar-toggler-icon"></span>
+          <form action="success.html">
+            <div class="my-3">
+              <input type="text" id="email" class="form-control" />
+            </div>
+            <div class="my-3">
+              <input type="password" id="pw" class="form-control" />
+              <p class="textholder">6자리 이상 입력하세요</p>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">
+              전송
             </button>
+            <button type="button" class="btn btn-danger" id="close">
+              닫기
+            </button>
+          </form>
         </div>
-        <div class="progress-bar" style="width: 100%; height:3px; background:gray;"></div>
-    </nav> 
+      </div>
 
-    <div class="main-bg">
-    <h4> Shirts for Sale</h4>
-    <button id="login" class="btn btn-danger">로그인</button>
-    </div>
-    <div class="lorem" style="width: 100%; height: 100px; overflow-y: scroll">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
-</div> 
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand">jiwonee</span>
+          <span class="badge ms-auto mx-3 bg-dark">Dark 🔄</span>
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div
+          class="progress-bar"
+          style="width: 100%; height: 3px; background: gray; display: none"
+        ></div>
+      </nav>
 
-    
-    <div style="height:1000px"></div>
-    <ul class="list-group">
+      <div class="main-bg">
+        <h4>Shirts for Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+      </div>
+      <div class="lorem" style="width: 100%; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas
+        voluptatum minus praesentium fugit debitis at, laborum ipsa itaque
+        placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae
+        consectetur praesentium exercitationem.
+      </div>
+
+      <div style="height: 1000px"></div>
+      <ul class="list-group">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
         <li class="list-group-item">A third item</li>
         <li class="list-group-item">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
-    </ul> 
+      </ul>
 
-    <div class="alert alert-danger">
-       <span id="time">5</span>  이내 구매시 사은품 증정
-    </div>
+      <div class="alert alert-danger">
+        <span id="time">5</span> 이내 구매시 사은품 증정
+      </div>
 
-    <div style="overflow: hidden;">
+      <div style="overflow: hidden">
         <div class="slide-container">
-            <div class="slide-box">
-                <img src="car1.png">
-            </div>
-            <div class="slide-box">
-                <img src="car2.png">
-            </div>
-            <div class="slide-box">
-                <img src="car3.png">
-            </div>
+          <div class="slide-box">
+            <img src="car1.png" />
+          </div>
+          <div class="slide-box">
+            <img src="car2.png" />
+          </div>
+          <div class="slide-box">
+            <img src="car3.png" />
+          </div>
         </div>
+      </div>
+      <button class="prev">이전</button>
+      <button class="slide-1">1</button>
+      <button class="slide-2">2</button>
+      <button class="slide-3">3</button>
+      <button class="next">다음</button>
     </div>
-    <button class="prev">이전</button>
-    <button class="slide-1">1</button>
-    <button class="slide-2">2</button>
-    <button class="slide-3">3</button>
-    <button class="next">다음</button>
-</div>
-<script>
-$('.black-bg').on('click',function(e){
-    if(e.target==$('.black-bg')[0]){
-        $('.black-bg').removeClass('show-modal')
-    }
-})
+    <script>
+      $(".black-bg").on("click", function (e) {
+        if (e.target == $(".black-bg")[0]) {
+          $(".black-bg").removeClass("show-modal");
+        }
+      });
 
-    //진행바 스크롤
-    $(window).on('scroll',function(){
-        let scrollTop  = $(window).scrollTop();
+      //진행바 스크롤
+      $(window).on("scroll", function () {
+        $(".progress-bar").css("display", "block");
+        let scrollTop = $(window).scrollTop();
         let windowHeight = $(window).height(); // 내가 보이는 화면의 높이
-        let documentHeight =  $(document).height(); // 전체 페이지의 높이
+        let documentHeight = $(document).height(); // 전체 페이지의 높이
         // 스크롤 위치에 따라 진행바의 너비를 계산
-        let scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-        
+        let scrollPercentage =
+          (scrollTop / (documentHeight - windowHeight)) * 100;
+
         // 진행바의 너비 설정
-        $('.progress-bar').css('width', scrollPercentage + '%');
-            
-    })
+        $(".progress-bar").css("width", scrollPercentage + "%");
+      });
 
+      // 회원약관 스크롤
+      let isAlertShown = false;
 
-
-// 회원약관 스크롤
-    let isAlertShown=false
-
-    $('.lorem').on('scroll',function(){
-        let myscroll= document.querySelector('.lorem').scrollTop
-        let height= document.querySelector('.lorem').scrollHeight
-        let realheight= document.querySelector('.lorem').clientHeight
+      $(".lorem").on("scroll", function () {
+        let myscroll = document.querySelector(".lorem").scrollTop;
+        let height = document.querySelector(".lorem").scrollHeight;
+        let realheight = document.querySelector(".lorem").clientHeight;
 
         // div의 스크롤바 내린 양 == div의 실제 높이
-        if(myscroll+realheight>height-10 && !isAlertShown){
-            alert('다읽음 ')
-            isAlertShown=true
-        } else if(myscroll+realheight<height){
-            isAlertShown=false
+        if (myscroll + realheight > height - 10 && !isAlertShown) {
+          alert("다읽음 ");
+          isAlertShown = true;
+        } else if (myscroll + realheight < height) {
+          isAlertShown = false;
         }
-    })
+      });
 
+      // $(window).on('scroll',function(){
+      //     console.log($(window).scrollTop())
+      // })
 
-// $(window).on('scroll',function(){
-//     console.log($(window).scrollTop())
-// })
-
-    $(window).on('scroll',function(){
-        if($(window).scrollTop()>=100){
-            $('.navbar-brand').css('fontSize','20px')
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() >= 100) {
+          $(".navbar-brand").css("fontSize", "20px");
         } else {
-            $('.navbar-brand').css('fontSize','25px')
+          $(".navbar-brand").css("fontSize", "25px");
         }
-    })
+      });
 
+      // 캐러셀
+      let counts = 0;
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0vw)");
+      });
+      $(".slide-2").on("click", function () {
+        counts = 1;
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+      $(".slide-3").on("click", function () {
+        counts = 2;
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
 
-    // 캐러셀
-    let counts=0;
-    $('.slide-1').on('click',function(){
-        $('.slide-container').css('transform','translateX(0vw)')
-    })
-    $('.slide-2').on('click',function(){
-        counts=1
-        $('.slide-container').css('transform','translateX(-100vw)')
-    })
-    $('.slide-3').on('click',function(){
-        counts=2
-        $('.slide-container').css('transform','translateX(-200vw)')
-    })
-
-    
-    $('.next').on('click',function(){
-        console.log(counts)
+      $(".next").on("click", function () {
+        console.log(counts);
         counts++;
-        $('.slide-container').css('transform',`translateX(-${counts}00vw)`)
-       
-    })
-    $('.prev').on('click',function(){
-        console.log(counts)
+        $(".slide-container").css("transform", `translateX(-${counts}00vw)`);
+      });
+      $(".prev").on("click", function () {
+        console.log(counts);
         counts--;
-        $('.slide-container').css('transform',`translateX(-${counts}00vw)`)
-    })
+        $(".slide-container").css("transform", `translateX(-${counts}00vw)`);
+      });
 
+      // 5초 후 창 사라지도록하기 , 실시간으로 초 변경
+      let time = 5;
+      setInterval(function () {
+        if (time > 0) {
+          time--;
+          $("#time").html(time);
+        }
+        if (time == 0) {
+          $(".alert").hide();
+        }
+      }, 1000);
 
-    // 5초 후 창 사라지도록하기 , 실시간으로 초 변경 
-    let time=5;
-    setInterval(function(){
-        if(time>0){
-            time--;
-            $('#time').html(time)   
-        } 
-        if( time ==0 ){
-            $('.alert').hide()}
-    },1000)
-  
+      //x초후 코드 실행
+      // setTimeout(function(){
+      //     $('.alert').hide()}
+      //     ,5000)
 
+      //다크모드 버튼 구현
 
-   //x초후 코드 실행
-    // setTimeout(function(){
-    //     $('.alert').hide()}
-    //     ,5000)
+      let count = 0;
 
-    //다크모드 버튼 구현
-
-    let count=0;
-
-    $('.badge').on('click',function(){
+      $(".badge").on("click", function () {
         count++;
-        $('body').toggleClass('dark')
-        } )
+        $("body").toggleClass("dark");
+      });
 
+      // 비밀번호 6자리 이상인지 검사
+      document.getElementById("pw").addEventListener("input", function () {
+        const password = $("#pw").val();
+        const textholder = $(".textholder");
 
-
-    // 비밀번호 6자리 이상인지 검사 
-    document.getElementById('pw').addEventListener('input',function(){
-        const password = $('#pw').val();
-        const textholder = $('.textholder');
-        
-        if (password === '' || password.length > 6) {
-            textholder.hide();
+        if (password === "" || password.length > 6) {
+          textholder.hide();
         } else if (password.length < 6) {
-            textholder.show();
+          textholder.show();
         }
-    })
+      });
 
-    // input 공백 검사 
-    $('#submit').on('click',function(e){
-        let emailInput= $('#email').val() 
-        let pwInput= $('#pw').val()
-        console.log(emailInput)
-        if (emailInput==='') {
-        alert("아이디를 입력하세요");
-        e.preventDefault();
-        } else if (pwInput===''){
-            alert("비밀번호를 입력하세요");
-            e.preventDefault(); 
-        } else if (pwInput.length<6){
-            alert("비밀번호를 6자리 이상 입력하세요");
-            e.preventDefault(); 
-        } 
-    })
-    //형식 검사
-    $('form').on('submit',function(e){
-        let emailInput=$('#email').val();
-        let pwInput= $('#pw').val();
-        if(!(/\S+@\S+\.\S+/.test(emailInput))){
-            alert('이메일 형식을 올바르게 입력하세요');
-            e.preventDefault();
-        } else if(/[A-Z]/.test(pwInput)){
-            alert('대문자를 입력하지 마세요');
-            e.preventDefault();
+      // input 공백 검사
+      $("#submit").on("click", function (e) {
+        let emailInput = $("#email").val();
+        let pwInput = $("#pw").val();
+        console.log(emailInput);
+        if (emailInput === "") {
+          alert("아이디를 입력하세요");
+          e.preventDefault();
+        } else if (pwInput === "") {
+          alert("비밀번호를 입력하세요");
+          e.preventDefault();
+        } else if (pwInput.length < 6) {
+          alert("비밀번호를 6자리 이상 입력하세요");
+          e.preventDefault();
         }
-    
-    })
+      });
+      //형식 검사
+      $("form").on("submit", function (e) {
+        let emailInput = $("#email").val();
+        let pwInput = $("#pw").val();
+        if (!/\S+@\S+\.\S+/.test(emailInput)) {
+          alert("이메일 형식을 올바르게 입력하세요");
+          e.preventDefault();
+        } else if (/[A-Z]/.test(pwInput)) {
+          alert("대문자를 입력하지 마세요");
+          e.preventDefault();
+        }
+      });
 
-    // 로그인 버튼, 닫기 버튼 구현 
-    $('#login').on('click',function(){
-        $('.black-bg').addClass('show-modal');
-    });
-    $('#close').on('click',function(){
-        $('.black-bg').removeClass('show-modal');
-    });
+      // 로그인 버튼, 닫기 버튼 구현
+      $("#login").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+      $("#close").on("click", function () {
+        $(".black-bg").removeClass("show-modal");
+      });
 
-    $('.navbar-toggler').on('click',function(){
-        $('.list-group').toggleClass('show');
-})
-
-</script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      $(".navbar-toggler").on("click", function () {
+        $(".list-group").toggleClass("show");
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

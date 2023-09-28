@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <h2>장바구니</h2>
+    <div class="cartcard"></div>
+    <script>
+      let cartcards = JSON.parse(localStorage.getItem("cart"));
+      console.log(cartcards);
+      for (i = 0; i < cartcards.length; i++) {
+        $(".cartcard").append(
+          `<p>${cartcards[i].title} x ${cartcards[i].count}<p>`
+        );
+      }
+    </script>
+  </body>
+</html>
