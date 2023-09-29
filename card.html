@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="card.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="progress-bar"
+      style="width: 100%; height: 3px; background: gray; display: none"
+    ></div>
+    <div class="card-background">
+      <div class="card-box">
+        <img src="card1.png" />
+      </div>
+      <div class="card-box">
+        <img src="card2.png" />
+      </div>
+      <div class="card-box">
+        <img src="card3.png" />
+      </div>
+    </div>
+
+    <script>
+      $(window).scroll(function () {
+        let scrollTop = $(window).scrollTop();
+        console.log(scrollTop);
+        let startscroll1 = 700;
+        let endscroll1 = 1100;
+        let startscroll2 = 1100;
+        let endscroll2 = 1700;
+        let height1 = (scrollTop - startscroll1) / (endscroll1 - startscroll1);
+        let height2 = (scrollTop - startscroll2) / (endscroll2 - startscroll2);
+
+        $(".card-box")
+          .eq(0)
+          .css("opacity", 1 - height1);
+
+        $(".card-box")
+          .eq(1)
+          .css("opacity", 1 - height2);
+
+        let startscroll3 = 700;
+        let endscroll3 = 900;
+        let startscroll4 = 1000;
+        let endscroll4 = 1600;
+
+        let rescale1 =
+          1 + ((scrollTop - startscroll3) * -0.1) / (endscroll3 - startscroll3);
+        let rescale2 =
+          1 + ((scrollTop - startscroll4) * -0.1) / (endscroll4 - startscroll4);
+        if (scrollTop >= 750) {
+          $(".card-box").eq(0).css("transform", `scale( ${rescale1} )`);
+        }
+
+        $(".card-box").eq(1).css("transform", `scale( ${rescale2} )`);
+      });
+      //  615-865 755
+
+      $(window).on("scroll", function () {
+        $(".progress-bar").css("display", "block");
+        let scrollTop = $(window).scrollTop();
+        let windowHeight = $(window).height(); // 내가 보이는 화면의 높이
+        let documentHeight = $(document).height(); // 전체 페이지의 높이
+        //console.log(scrollTop / (documentHeight - windowHeight));
+        // 스크롤 위치에 따라 진행바의 너비를 계산
+        let scrollPercentage =
+          (scrollTop / (documentHeight - windowHeight)) * 100;
+        // 진행바의 너비 설정
+        $(".progress-bar").css("width", scrollPercentage + "%");
+      });
+    </script>
+  </body>
+</html>

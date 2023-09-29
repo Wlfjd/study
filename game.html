@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="quiz">
+      <h4>물에 빠지면 누구먼저 구할 것인가</h4>
+      <button>와이프</button>
+      <button>부모님</button>
+      <button>키우던 개</button>
+      <button>친구</button>
+    </div>
+    <button id="button">버튼이에요</button>
+
+    <script>
+      document.querySelector("#quiz").addEventListener("click", function (e) {
+        let selected = e.target.innerHTML;
+        switch (selected) {
+          case "와이프":
+            alert("달달한 사랑꾼이시네요");
+            break;
+          case "부모님":
+            alert("효심 가득하시네요");
+            break;
+          case "키우던 개":
+            alert("동물을 애정하시는군요");
+            break;
+          case "친구":
+            alert("친구가 그렇게 좋으세요?");
+            break;
+        }
+      });
+
+      var pants = 20;
+      var socks = 100;
+      function A(letter, ...vars) {
+        if (letter[0] == 0) {
+          console.log("바지 다 팔렸어요 양말" + vars[1]);
+        }
+        console.log(letter[1] + vars[0] + letter[0] + vars[1]);
+      }
+
+      A`바지${pants} 양말${socks}`;
+    </script>
+  </body>
+</html>
