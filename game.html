@@ -16,34 +16,81 @@
     <button id="button">버튼이에요</button>
 
     <script>
-      document.querySelector("#quiz").addEventListener("click", function (e) {
-        let selected = e.target.innerHTML;
-        switch (selected) {
-          case "와이프":
-            alert("달달한 사랑꾼이시네요");
-            break;
-          case "부모님":
-            alert("효심 가득하시네요");
-            break;
-          case "키우던 개":
-            alert("동물을 애정하시는군요");
-            break;
-          case "친구":
-            alert("친구가 그렇게 좋으세요?");
-            break;
-        }
-      });
+      //   document.querySelector("#quiz").addEventListener("click", function (e) {
+      //     let selected = e.target.innerHTML;
+      //     switch (selected) {
+      //       case "와이프":
+      //         alert("달달한 사랑꾼이시네요");
+      //         break;
+      //       case "부모님":
+      //         alert("효심 가득하시네요");
+      //         break;
+      //       case "키우던 개":
+      //         alert("동물을 애정하시는군요");
+      //         break;
+      //       case "친구":
+      //         alert("친구가 그렇게 좋으세요?");
+      //         break;
+      //     }
+      //   });
 
-      var pants = 20;
-      var socks = 100;
-      function A(letter, ...vars) {
-        if (letter[0] == 0) {
-          console.log("바지 다 팔렸어요 양말" + vars[1]);
-        }
-        console.log(letter[1] + vars[0] + letter[0] + vars[1]);
-      }
+      //   function Add(a, b, c) {
+      //     console.log(a + b + c);
+      //   }
+      //   var array = [10, 20, 30];
+      //   Add(1, 2, 3);
 
-      A`바지${pants} 양말${socks}`;
+      //   var a = [1, 2, 3];
+      //   var b = "김밥";
+      //   var c = [...b, ...a];
+      //   console.log(c); // 김, 밥, 1,2,3
+
+      //   var a = [1, 2, 3];
+      //   var b = ["you", "are"];
+      //   var c = function (a, b) {
+      //     console.log([[...a], ...[...b]][1]);
+      //   };
+      //   c(a, b); // [1,2,3],y
+
+      //   function 함수(a = 5, b = a * 2) {
+      //     console.log(a + b);
+      //     return 10;
+      //   }
+      //   함수(3); //9 10
+
+      //   function 함수(a = 5, b = a * 2) {
+      //     console.log(a + b);
+      //   }
+      //   함수(undefined, undefined); //15 undefined
+
+      //   function 어레이(...rest) {
+      //     console.log(rest);
+      //   }
+
+      //   var newArray = 어레이(1, 2, 3, 4, 5);
+      //   console.log(newArray); //[1,2,3,4,5]
+
+      //   var numbers = [2, 3, 4, 5, 6, 1, 3, 2, 5, 5, 4, 6, 7];
+      //   function max(a) {
+      //     return a;
+      //   }
+      //   max(numbers);
+
+      //   function Add(a, b, c) {
+      //     console.log(a + b + c);
+      //   }
+      //   let array = [10, 20, 30];
+      //   Add(...array);
+
+      var person = {
+        greet: function () {
+          console.log(this.name + "안녕");
+        },
+      };
+      var person2 = {
+        name: "손흥민",
+      };
+      person.greet.apply(person2);
     </script>
   </body>
 </html>
