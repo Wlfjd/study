@@ -59,21 +59,6 @@
       //   .catch(function () {
       //     console.log("실패");
       //   });
-
-      async function button() {
-        let promise = new Promise((resolve, reject) => {
-          $("#button").click(() => {
-            console.log("성공?");
-            resolve();
-          });
-        });
-        try {
-          let result = await promise;
-          console.log(result);
-        } catch {
-          console.log("실패");
-        }
-      }
     </script>
   </body>
 </html>
