@@ -14,7 +14,17 @@
     ></script>
   </head>
   <body>
-    <button id="button">버튼이에요</button>
+    <div id="mordor"></div>
+    <label>테스트 라벨</label>
+    <custom-input></custom-input>
+    <template id="template1">
+      <label>이메일 인풋</label><input />
+      <style>
+        label {
+          color: blue;
+        }
+      </style>
+    </template>
     <script>
       let promise = new Promise((resolve, reject) => {
         $("#button").click(() => {
@@ -27,29 +37,54 @@
         console.log(result);
       }
 
-      var products = [
-        {
-          name1: "chair",
-          price1: 7000,
-        },
-        {
-          name2: "sofa",
-          price: 5000,
-        },
-        {
-          name1: "desk",
-          price3: 9000,
-        },
-      ];
+      //   var products = [
+      //     {
+      //       name1: "chair",
+      //       price1: 7000,
+      //     },
+      //     {
+      //       name2: "sofa",
+      //       price: 5000,
+      //     },
+      //     {
+      //       name1: "desk",
+      //       price3: 9000,
+      //     },
+      //   ];
 
-      let person = { name: "Kim" };
-      person.height = 170;
-      let weight = Symbol("내 비밀 몸무게");
-      person[weight] = 100;
+      //   let person = new Map(); //자료의 연관성을 표현하기 위해 사용
+      //   person.set("name", "kim");
+      //   person.set("age", 20);
 
-      for (let key in person) {
-        console.log(pserson[key]);
+      //   person.get("20");
+
+      //   let people = ["john", "tom", "andy", "tom"];
+      //   let people2 = new Set(people);
+      //   //people2.add("sally");
+      //   people = [...people2];
+
+      class classs extends HTMLElement {
+        connectedCallback() {
+          this.attachShadow({ mode: "open" });
+
+          this.shadowRoot.append(template1.content.cloneNode(true));
+          let elem = this.shadowRoot.querySelector("label");
+          elem.addEventListener("click", function () {
+            console.log("클릭");
+          });
+        }
+        // name 속성이 바뀔 때마다 체크해달란 뜻
+        static get observedAttributes() {
+          return ["name"];
+        }
+        attributeChangeCallBack() {
+          this.innerHTML = `<label>${name}인풋</label><input>`;
+        }
       }
+      customElements.define("custom-input", classs);
+      document.querySelector("#mordor").attachShadow({ mode: "open" });
+      document.querySelector("#mordor").shadowRoot.innerHTML =
+        "<p>shadow DOM</p>";
     </script>
   </body>
 </html>
