@@ -5,3 +5,13 @@
 .nav-link:focus {
   color: white;
 }
+.cart {
+  width: 90%;
+  background: black;
+  height: 300px;
+  margin: 0 auto;
+}
+.cart-title {
+  margin-left: 20px;
+  font-size: 20px;
+}
