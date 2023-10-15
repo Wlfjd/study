@@ -49,33 +49,33 @@
 // 학교.score[4] = false;
 // 학교.friend = ["Lee", 학교.teacher];
 
-// //함수 타입 지정
-// // 변수만들고 타입 할당 안하면 any 타입 할당됨
-// function func(x?: number): void {
-//   // void return 하는 걸 막아줌, return이 불필요
-// }
+//함수 타입 지정
+// 변수만들고 타입 할당 안하면 any 타입 할당됨
+function func(x?: number): void {
+  // void return 하는 걸 막아줌, return이 불필요
+}
 
-// func(2); // 쌩 js랑은 다르게 타입지정된 파라미터는 필수임
-// //파라미터가 옵션일 경우에는 x?:number
-// // x?:number은  x:number|undefined와 같다
-
-// //practice
-// function sayHi(x?: string) {
-//   if (x) {
-//     console.log("안녕하세요 " + x);
-//   } else {
-//     console.log("왜입력안함");
-//   }
-// }
-// sayHi("홍길동 ");
-
-// //practice
-// function func2(x: string | number) {
-//   console.log(String(x).length);
-// }
-// func2(123);
+func(2); // 쌩 js랑은 다르게 타입지정된 파라미터는 필수임
+//파라미터가 옵션일 경우에는 x?:number
+// x?:number은  x:number|undefined와 같다
 
 //practice
+function sayHi(x?: string) {
+  if (x) {
+    console.log("안녕하세요 " + x);
+  } else {
+    console.log("왜입력안함");
+  }
+}
+sayHi("홍길동 ");
+
+//practice
+function func2(x: string | number) {
+  console.log(String(x).length);
+}
+func2(123);
+
+//practice;
 
 let total: number = 0;
 function func3(income: number, home: boolean, score: string) {
