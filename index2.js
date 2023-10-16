@@ -77,3 +77,49 @@ function func3(income, home, score) {
     }
 }
 func3(40000, true, "상");
+//narrowing
+function myfunc(x) {
+    if (typeof x === "string") {
+        //type이 하나로 확정되지 않은 경우 type narrowing을 사용해야함
+        return x + 1;
+    }
+    else {
+        return x + 1;
+    }
+}
+myfunc(123);
+// assertion
+function myfunc2(x) {
+    var array = [];
+    array[0] = x; //타입 덮어쓰기 => union 타입에서 타입 확정할 때 사용하기! 타입 변경은 안됨
+}
+myfunc2(123);
+var animals = 123;
+//const
+var area = { region: "seoul" }; //타입스크립트에서는 오브젝트 안의 변수 수정 못하게 막는 것이 가능(js는 불가)
+area.region = "busan";
+var girl = { name: "amber" };
+//literal type -> 들어올 수 있는 특정 문자를 타입처럼 지정
+function gg(a) {
+    return 1;
+}
+function rsp(x) {
+    return ["rock"];
+}
+//as const 문법
+var 자료 = {
+    name: "kim",
+};
+function 내함수(a) { }
+내함수(자료.name);
+var ABC = function (x, y) {
+    return x + y;
+};
+//메소드에 지정
+var info = {
+    name: "kim",
+    plusOne: function (a) {
+        return a + 1;
+    },
+    changeName: function () { return void ; }
+};

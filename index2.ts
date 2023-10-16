@@ -91,3 +91,70 @@ function func3(income: number, home: boolean, score: string) {
   }
 }
 func3(40000, true, "상");
+
+//narrowing
+function myfunc(x: number | string) {
+  if (typeof x === "string") {
+    //type이 하나로 확정되지 않은 경우 type narrowing을 사용해야함
+    return x + 1;
+  } else {
+    return x + 1;
+  }
+}
+myfunc(123);
+
+// assertion
+function myfunc2(x: number | string) {
+  let array: number[] = [];
+  array[0] = x as number; //타입 덮어쓰기 => union 타입에서 타입 확정할 때 사용하기! 타입 변경은 안됨
+}
+
+myfunc2(123);
+
+//타입을 변수에 담아쓰기
+type Animal = string | number | undefined; //대문자로 작명
+let animals: Animal = 123;
+
+//const
+const area = { region: "seoul" }; //타입스크립트에서는 오브젝트 안의 변수 수정 못하게 막는 것이 가능(js는 불가)
+area.region = "busan";
+//막는 방법
+type Girl = { readonly name: string }; //readonly : 수정 금지
+const girl: Girl = { name: "amber" };
+//girl.name="jiwon" 은 에디터에서 에러난다/ 실제 변환된 js 파일은 에러없음
+
+//practice
+type AA = { color: string; size: number; readonly position: number[] };
+
+//literal type -> 들어올 수 있는 특정 문자를 타입처럼 지정
+function gg(a: "hello"): 1 | 0 {
+  return 1;
+}
+
+//practice
+type RSP = "rock" | "sissor" | "paper";
+function rsp(x: RSP): RSP[] {
+  return ["rock"];
+}
+
+//as const 문법
+var 자료 = {
+  name: "kim",
+} as const;
+
+function 내함수(a: "kim") {}
+내함수(자료.name);
+
+//함수 type alias 지정
+type NumOut = (x: number, y: number) => number;
+let ABC: NumOut = function (x, y) {
+  return x + y;
+};
+//메소드에 지정
+let info = {
+  name: "kim",
+  plusOne(a: number) {
+      return a+1
+  },
+  changeName: () => void
+};
