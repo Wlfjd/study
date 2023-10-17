@@ -115,11 +115,3 @@ function 내함수(a) { }
 var ABC = function (x, y) {
     return x + y;
 };
-//메소드에 지정
-var info = {
-    name: "kim",
-    plusOne: function (a) {
-        return a + 1;
-    },
-    changeName: function () { return void ; }
-};

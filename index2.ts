@@ -151,10 +151,8 @@ let ABC: NumOut = function (x, y) {
   return x + y;
 };
 //메소드에 지정
-let info = {
-  name: "kim",
-  plusOne(a: number) {
-      return a+1
-  },
-  changeName: () => void
+type info = {
+  name: "kim";
+  plusOne(a: number): number;
+  changeName: () => void;
 };
