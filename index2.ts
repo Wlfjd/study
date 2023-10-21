@@ -156,3 +156,22 @@ type info = {
   plusOne(a: number): number;
   changeName: () => void;
 };
+
+//rest param  타입 지정
+//rest 파라미터는 배열로 출력되어서 타입을 배열로 지정해줘 함
+function func5(...a: number[]) {
+  console.log(a); //배열로 출력
+}
+func5(1, 2, 3, 4, 5, 6);
+///...을 배열이나 객체 왼쪽에 쓰면 값을 꺼낸다는 의미로 rest 파라미터와는 다르다
+
+// destructuring 타입 지정
+let [aa, bb] = ["안녕", 100];
+console.log(aa, bb);
+
+let { student, age } = { student: true, age: 20 }; // 키,밸류 같으면 하나로 작성 가능
+let obj = { student: true, age: 20 }; // 키,밸류 같으면 하나로 작성 가능
+function func6({ student, age }: { student: boolean; age: number }) {
+  console.log(student, age);
+}
+func6(obj);

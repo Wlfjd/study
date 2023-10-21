@@ -115,3 +115,24 @@ function 내함수(a) { }
 var ABC = function (x, y) {
     return x + y;
 };
+//rest param  타입 지정
+//rest 파라미터는 배열로 출력되어서 타입을 배열로 지정해줘 함
+function func5() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    console.log(a); //배열로 출력
+}
+func5(1, 2, 3, 4, 5, 6);
+///...을 배열이나 객체 왼쪽에 쓰면 값을 꺼낸다는 의미로 rest 파라미터와는 다르다
+// destructuring 타입 지정
+var _a = ["안녕", 100], aa = _a[0], bb = _a[1];
+console.log(aa, bb);
+var _b = { student: true, age: 20 }, student = _b.student, age = _b.age; // 키,밸류 같으면 하나로 작성 가능
+var obj = { student: true, age: 20 }; // 키,밸류 같으면 하나로 작성 가능
+function func6(_a) {
+    var student = _a.student, age = _a.age;
+    console.log(student, age);
+}
+func6(obj);
