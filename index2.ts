@@ -207,3 +207,15 @@ function func8(x: Car | Bike) {
     console.log("x는 Car 타입입니다");
   }
 }
+
+//never 타입 ( = 있을 수 없다는 뜻 ) - 리턴과 endpoint가 없어야 함
+// void 타입으로 대체 가능
+function func9(): never {
+  throw new Error(); // 에러가 나면 전체 코드실행이 중단
+}
+function func10(): never {
+  while (true) {
+    // 조건식이 true일 경우 계속 내부 코드를 실행
+    console.log(1);
+  }
+}

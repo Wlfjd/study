@@ -136,7 +136,7 @@ function func6(_a) {
     console.log(student, age);
 }
 func6(obj);
-//narrawing - undefined, null
+//narrowing - undefined, null
 function func7(a) {
     if (a && typeof a === "string") {
         //a가 undefined 면 if 문 실행 안되고 a가 string 이면 실행됨
@@ -144,6 +144,23 @@ function func7(a) {
 }
 function ani(animal) {
     if ("swim" in animal) {
+        //Fish타입인지 아닌지 검사하는 네로잉 문법 (swim은 Fish 타입에만 존재하기 때문)
         animal.swim;
+    }
+}
+function func8(x) {
+    if (x.wheel === "4개") {
+        console.log("x는 Car 타입입니다");
+    }
+}
+//never 타입 ( = 있을 수 없다는 뜻 ) - 리턴과 endpoint가 없어야 함
+// void 타입으로 대체 가능
+function func9() {
+    throw new Error(); // 에러가 나면 전체 코드실행이 중단
+}
+function func10() {
+    while (true) {
+        // 조건식이 true일 경우 계속 내부 코드를 실행
+        console.log(1);
     }
 }
