@@ -136,3 +136,14 @@ function func6(_a) {
     console.log(student, age);
 }
 func6(obj);
+//narrawing - undefined, null
+function func7(a) {
+    if (a && typeof a === "string") {
+        //a가 undefined 면 if 문 실행 안되고 a가 string 이면 실행됨
+    }
+}
+function ani(animal) {
+    if ("swim" in animal) {
+        animal.swim;
+    }
+}

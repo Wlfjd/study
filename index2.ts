@@ -175,3 +175,35 @@ function func6({ student, age }: { student: boolean; age: number }) {
   console.log(student, age);
 }
 func6(obj);
+
+//narrowing - undefined, null
+function func7(a: string | undefined) {
+  if (a && typeof a === "string") {
+    //a가 undefined 면 if 문 실행 안되고 a가 string 이면 실행됨
+  }
+}
+
+//narrowing- in 객체
+type Fish = { swim: string };
+type Bird = { fly: string };
+function ani(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    //Fish타입인지 아닌지 검사하는 네로잉 문법 (swim은 Fish 타입에만 존재하기 때문)
+    animal.swim;
+  }
+}
+
+//narrowing- literal type
+type Car = {
+  wheel: "4개";
+  color: string;
+};
+type Bike = {
+  wheel: "2개";
+  color: string;
+};
+function func8(x: Car | Bike) {
+  if (x.wheel === "4개") {
+    console.log("x는 Car 타입입니다");
+  }
+}
