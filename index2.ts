@@ -219,3 +219,6 @@ function func10(): never {
     console.log(1);
   }
 }
+
+//
+console.log('test')
