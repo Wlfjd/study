@@ -166,35 +166,34 @@ function func10() {
 }
 //
 console.log("test");
-var User = /** @class */ (function () {
-    function User() {
-        this.name = "kim";
-    }
-    return User;
-}());
-var 유저1 = new User();
-유저1.name = "park"; //가능
-var User = /** @class */ (function () {
-    function User() {
-        this.name = "kim";
-        var hello = this.familyName + "안뇽"; //가능
-    }
-    return User;
-}());
-// let 유저1 = new User();
-// 유저1.name = 'park';  //가능
-// 유저1.familyName = 456; //에러남
-var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
-    }
-    return Person;
-}());
-var 사람1 = new Person("john");
-var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
-    }
-    return Person;
-}());
-var 사람1 = new Person("john");
+console.log("test2");
+// class Users {
+//   public name: string;
+//   constructor() {
+//     this.name = "kim";
+//   }
+// }
+// let 유저1 = new Users();
+// 유저1.name = "park"; //가능
+// class User {
+//   public name: string;
+//   private familyName: string;
+//   constructor() {
+//     this.name = "kim";
+//     let hello = this.familyName + "안뇽"; //가능
+//   }
+// }
+// // let 유저1 = new User();
+// // 유저1.name = 'park';  //가능
+// // 유저1.familyName = 456; //에러남
+// class Persons {
+//   name;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+// let 사람2 = new Persons("john");
+// class Person {
+//   constructor(public name: string) {}
+// }
+// let 사람3 = new Person("john");

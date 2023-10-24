@@ -222,41 +222,42 @@ function func10(): never {
 
 //
 console.log("test");
+console.log("test2");
 
-class Users {
-  public name: string;
+// class Users {
+//   public name: string;
 
-  constructor() {
-    this.name = "kim";
-  }
-}
+//   constructor() {
+//     this.name = "kim";
+//   }
+// }
 
-let 유저1 = new Users();
-유저1.name = "park"; //가능
+// let 유저1 = new Users();
+// 유저1.name = "park"; //가능
 
-class User {
-  public name: string;
-  private familyName: string;
+// class User {
+//   public name: string;
+//   private familyName: string;
 
-  constructor() {
-    this.name = "kim";
-    let hello = this.familyName + "안뇽"; //가능
-  }
-}
+//   constructor() {
+//     this.name = "kim";
+//     let hello = this.familyName + "안뇽"; //가능
+//   }
+// }
 
-// let 유저1 = new User();
-// 유저1.name = 'park';  //가능
-// 유저1.familyName = 456; //에러남
+// // let 유저1 = new User();
+// // 유저1.name = 'park';  //가능
+// // 유저1.familyName = 456; //에러남
 
-class Persons {
-  name;
-  constructor(name: string) {
-    this.name = name;
-  }
-}
-let 사람2 = new Persons("john");
+// class Persons {
+//   name;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+// let 사람2 = new Persons("john");
 
-class Person {
-  constructor(public name: string) {}
-}
-let 사람3 = new Person("john");
+// class Person {
+//   constructor(public name: string) {}
+// }
+// let 사람3 = new Person("john");
